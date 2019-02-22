@@ -9,10 +9,12 @@ spec:
       build:
         from: master
   components:
-    - name: server
+    - name: game
       src: ./
-      replicas: 0
       ports:
        - name: http
          port: 80
       public: true
+  dnsAppAlias:
+    environment: dev
+    component: game
